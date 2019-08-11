@@ -45,7 +45,7 @@ diff .(m + suc k) m | more k = suc k
 diff m .m | same = zero
 
 -- List
-open import Data.List
+open import Data.List hiding (lookup)
 open import Data.Empty using (⊥)
 open import Data.Unit using (⊤; tt)
 open import Relation.Binary.PropositionalEquality using (_≡_; refl)
@@ -96,3 +96,4 @@ lookup : {A : Set} → (A → Bool) → List A → Maybe A
 lookup p xs with find p xs
 lookup p .(xs ++ y ∷ ys) | found xs y x ys = just y
 lookup p xs | not-found npxs = nothing
+
